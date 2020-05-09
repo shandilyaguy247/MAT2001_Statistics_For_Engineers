@@ -1,0 +1,40 @@
+#Lab task 10
+#These are the commands that you can enter into the R Console directly, one by one.
+#Please copy the questions from vtop, writing them in the code makes the code ugly.
+
+#H0: u1 = u2
+#H1: u1 ≠u2
+
+before = c(12.9, 13.5, 12.8, 15.6, 17.2, 19.2, 12.6, 15.3, 14.4, 11.3)
+after = c(12.7, 13.6, 12.0, 15.2, 16.8, 20.0, 12.0, 15.9, 16.0, 11.1)
+t.test (before, after, paired = TRUE)
+
+#The p-value is greater than 0.05. We do not reject the hypothesis H0 of equality of the averages and conclude that the new training has not made any significant improvement to the team of athletes.
+
+#H0: u1 = u2
+#H1: u1 < u2
+
+before = c(12.9, 13.5, 12.8, 15.6, 17.2, 19.2, 12.6, 15.3, 14.4, 11.3)
+after = c(12.0, 12.2, 11.2, 13.0, 15.0, 15.8, 12.2, 13.4, 12.9, 11.0)
+t.test (before, after, paired = TRUE, alt = "LESS")
+
+#p-value is greater than 0.05, We can reject the null hypothesis H0 in favour of the alternative hypothesis H1: the new training has made substantial improvements to the team.
+
+
+#H0: µd = 0
+#H1: d > 0
+
+before = c(237, 289, 257, 228, 303, 275, 262, 304, 244, 233)
+after = c(194, 240, 230, 186, 265, 222, 242, 281, 240, 212)
+t.test (before, after, paired = TRUE, alt = "GREATER", mu=0)
+
+#We reject the null hypothesis (H0) and support the claim(H1) because the P-value ( 5 5.2 10 X   ) is less than the significance level.
+
+#H0:S12=S22
+#H1: S12 ≠ S22
+
+unitA = c(14.1, 10.1, 14.7, 13.7, 14.0)
+unitB = c(14.0, 14.5, 13.7, 12.7, 14.1)
+var.test(unitA,unitB)
+
+#Pvalue > 0.05 significance level hence we accept the null hypothesis H0

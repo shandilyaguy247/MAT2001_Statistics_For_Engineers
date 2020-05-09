@@ -1,0 +1,24 @@
+#Lab task 5
+#These are the commands that you can enter into the R Console directly, one by one. (Please remove the '>')
+
+> x=c(34,37,36,32,32,36,35,34,29,35)
+> y=c(37,37,34,34,33,40,39,37,36,35)
+> fit=lm(x~y)
+> fit
+
+#The equation of the line of regression of X and Y is X=18.9167+0.4167Y. The required score of the student in Zoology is 30.58333
+
+> par(mfrow=c(2,2));
+> plot(fit)
+> par(mforw=c(1,1));
+> Y=c(110,80,70,120,150,90,70,120)
+> X1=c(30,40,20,50,60,40,20,60)
+> X2=c(11,10,7,15,19,12,8,14)
+> input_data=data.frame(Y,X1,X2)
+> input_data     Y X1 X2 1 110 30 11 2  80 40 10 3  70 20  7 4 120 50 15 5 150 60 19 6  90 40 12 7  70 20  8 8 120 60 14
+> RegModel <- lm(Y~X1+X2, data=input_data)
+> RegModel
+> summary(RegModel)
+> input_data<-read.csv('C:/Users/10526/Desktop/Moksha_New/ Agriculturedata.csv') >input_data
+> summary(input_data) >cor(input_data[,c("Net_Agricultural_Output","Population_Active_in_Agricult ure","Fertilizer_Consumption","Number_of_Tractors_in_Agriculture")], use="complete.obs")
+> RegModel.2 <- lm(Net_Agricultural_Output~Population_Active_in_Agriculture+Fertilizer_Co nsumption, data=input_data) 

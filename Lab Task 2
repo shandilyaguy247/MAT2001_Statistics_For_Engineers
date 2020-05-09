@@ -1,0 +1,45 @@
+#Lab task 2
+#These are the commands that you can enter into the R Console directly, one by one. (Please remove the '>')
+#Professors usually don't prefer .rmd scripts, hence I'm forced to stick to this.
+
+> empid = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+> empid
+> age = c(30,37,45,32,50,60,35,32,34,43,32,30,43,50,60)
+> age
+> sex = c(0,1,0,1,1,1,0,0,1,0,0,1,1,0,0)
+> sex
+> status = c(1,1,2,2,1,1,1,2,2,1,2,1,2,1,2)
+> status
+> empinfo = data.frame(empid,age,sex,status)
+> empinfo
+> empinfo$sex = factor(empinfo$sex,labels = c("male","female"))
+> empinfo$sstatus = factor(empinfo$status,labels = c("staff","faculty"))
+> empinfo
+> empinfo$status = factor(empinfo$status,labels = c("staff","faculty"))
+> empinfo
+> empinfo = data.frame(empid,age,sex,status)
+> empinfo$sex = factor(empinfo$sex,labels = c("male","female"))
+> empinfo$status = factor(empinfo$status,labels = c("staff","faculty"))
+> empinfo
+> sexm = subset(empinfo,empinfo$sex == "male")
+> sexm
+> sexf = subset(empinfo,empinfo$sex == "female")
+> sexf
+> statusf = subset(empinfo,empinfo$status == "faculty")
+> statusf
+> summary(empinfo)
+> summary(sexm)
+> summary(sexf)
+> summary(empinfo$age)
+> table1 = table(empinfo$sex)
+> table1
+> table2 = table(empinfo$status)
+> table2
+> table3 = table(empinfo$sex,empinfo$status)
+> table3
+> plot(empinfo$age,type = "l",main = "age vs id", xlab = "empid", ylab = "age",col = "blue")
+> table4 = table(empinfo$sex)
+> pie(table4)
+> barplot(table3,beside = T,xlim = c(1,15),ylim = c(0,5))
+> legend("topright",legend = rownames(table3),fill = c('blue','red'),bty = "n")
+> boxplot(empinfo$age~empinfo$status,col=c("red","blue"))

@@ -1,0 +1,56 @@
+#Lab task 9
+#These are the commands that you can enter into the R Console directly, one by one.
+#Please copy the questions from vtop, writing them in the code makes the code ugly.
+
+#H0 : p1 = p2
+#H1: p1>p2
+#H0 rejected as because the P-value (.2812) is greater than the significance level
+
+x = c(177,90)
+n = c(150,120)
+prop.test (x,n,alternative = "greater, correct = "FALSE")
+
+#(A)
+#H0:p1=p2
+#H1:p1> p2
+#The p-value=0.02 < 0.05 so we reject H0. Accept H1.
+
+prop.test (c(1440,1311), c(2000,1900), alternative = "greater, correct = "FALSE")
+
+#(B)
+#H0:p1=p2
+#H1:p1≠ p2
+
+#Thus, we are 95% confident that the percent of eighth-graders who performed at or above the basic level in mathematics in 2011 is between 0:14% and 5:86% higher than in 2009.
+#Let p1 be the proportion of helmet use among injured skiers and snowboarders. Let p2 be the proportion of helmet use among uninjured skiers and snowboarders.
+#H0 : p1 = p2
+#H1 : p1 < p2
+
+prop.test (c(96,656), c(578,2992), alternative = c("less"), correct = "FALSE")
+
+#p-value= 0.0021 < 0.01 therefore H0 is rejected and H1 is accepted
+#H0: P1 = P2
+#H1: P1 ≠ P2
+
+prop.test(c(45,56),c(45+35,56+47))
+
+#we observe that the p-value is 0.9172 so we accept the hypothesis H0 that P1 =P2.
+
+table(quine$Eth, quine$Sex)
+prop.test (table(quine$Eth, quine$Sex), corect = "FALSE")
+
+#The 95% confidence interval estimate of the difference between the female proportion of Aboriginal students and the female proportion of Non-Aboriginal students is between -15.6% and 16.7%.
+#H0: XA = X¬B
+#H1: XA ≠ X¬B
+
+z.test2sam = funstion (a,b,var.a,var.b) {
++ n.a = length(a)
++ n.b = length(b)
++ zeta = (mean(a)-mean(b))/(sqrt(var.a/n.a+var.b/n.b))
++ return(zeta)}
+a = c(175, 168, 168, 190, 156, 181, 182, 175, 174, 179)
+b = c(185, 169, 173, 173, 188, 186, 175, 174, 179, 180)
+z.test2sam(a,b,5,8.5)
+
+#The value of z > z tabulated for alpha equal to 0.05 (z-tabulated = 1.96 for a two-tailed test)
+#Reject H0, accept H1. The two means are significantly different.

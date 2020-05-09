@@ -1,0 +1,40 @@
+#Lab task 6
+#These are the commands that you can enter into the R Console directly, one by one. (Please remove the '>')
+
+
+> dbinom(2,size=10,prob=1/6) 
+> choose(10,2)*(1/6)^2*(5/6)^8
+> probs = dbinom(0:10,10,1/6)
+> data.frame(0:10,probs)
+> plot(0:10,probs,type = "h",xlim = c(0,10),ylim = c(0,0.5))
+> x = 0:50
+> y = dbinom(x,size = 50,prob = 0.33)
+> plot(x,y,type = "h")
+> dbinom(2,7,1/4)
+> dbinom(0:7,7,1/4)
+> p = data.frame(0:7,dbinom(0:7,7,1/4))
+> round(p,4)
+> plot(0:7,dbinom(0:7,7,1/4),type = "o")
+> sum(dbinom(x=0:4,size=12,prob=0.2))
+> pbinom(4,12,1/5)
+> dbinom(2,20,0.1)
+> sum(dbinom(2:20,20,0.1))
+> sum(dbinom(1:3,20,0.1))
+> var = sum(((x-Ex)^2)*P)
+> var
+> dpois(x=5,lambda=7)
+> dpois(x=0:5,lambda=7)
+> sum(dpois(0:5,lambda=7))
+> ppois(q=12,lambda=7,lower.tail=F)
+> X.val=0:100
+> P.val=dpois(X.val,4)
+> EX=sum(X.val*P.val)
+> EX [1] 4
+> sum((X.val-EX)^2*P.val)
+> dpois(0:10,2)
+> ppois(0:10,2)
+> round(dpois(0:10, 2), 3)
+> ppois(6, 2)
+> sum(dpois(0:6, 2))
+> 1 - ppois(6, 2)
+>plot(0:10,dpois(0:10,2),type="h",xlab="y",ylab="p(y)",main="Poisson Distribution (mu=2)")
